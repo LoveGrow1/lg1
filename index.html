@@ -4,6 +4,7 @@
 <title>LoveGrow</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- Add the Bootstrap Icons CSS file -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <style>
   .jumbotron h1.display-4 {
@@ -36,25 +37,11 @@
     max-width: 30%;
     height: auto;
   }
-
-  /* Add this new style */
-  .fireworks {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    pointer-events: none;
-  }
-
 </style>
 <script type="text/javascript">
   function checkPassword() {
     if (sessionStorage.getItem("authenticated") === "true") {
       document.getElementById('protectedContent').style.display = 'block';
-      // Add these lines to hide the fireworks after 3 seconds
-      setTimeout(function() {
-        document.getElementById('fireworks').style.display = 'none';
-      }, 3000);
     } else {
       var password = prompt("Please enter password to view this page", "");
       if (password == "1234") {
@@ -68,10 +55,6 @@
 </script>
 </head>
 <body onload="checkPassword()">
-<!-- Add this div with an image of heart-shaped fireworks -->
-<div id="fireworks" class="fireworks">
-  <img src="heartFireworks.gif" alt="Heart Fireworks">
-</div>
 <div id="protectedContent" style="display:none">
 <div class="container">
   <div class="jumbotron text-center">
