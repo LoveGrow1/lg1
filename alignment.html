@@ -9,8 +9,28 @@
     font-size: 32px;
   }
 
-  p {
+  .info-box {
+    background-color: #ADD8E6;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .info-box p {
     font-size: 18px;
+  }
+
+  .rating-bar {
+    background-color: #ddd;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .rating-bar div {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 65%; /* represent the 6.5 out of 10 rating */
   }
 
   .btn {
@@ -27,7 +47,12 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <p>Considering the discrepancies in several responses, I would rank your couple's alignment at a 6.5 out of 10.</p>
+      <div class="info-box">
+        <p>Considering the discrepancies in several responses, I would rank your couple's alignment at a 6.5 out of 10.</p>
+        <div class="rating-bar">
+          <div></div>
+        </div>
+      </div>
     </div>
   </div>
   <a href="index.html" class="btn btn-secondary btn-lg btn-block">Back</a>
