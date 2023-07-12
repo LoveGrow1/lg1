@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LoveGrow</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script type="text/javascript">
+  function checkPassword() {
+    // Check if password has already been entered during this session
+    if (sessionStorage.getItem("authenticated") === "true") {
+      // User has already entered correct password during this session, so display content
+      document.getElementById('protectedContent').style.display = 'block';
+    } else {
+      // User has not entered correct password during this session, so prompt for password
+      var password = prompt("Please enter password to view this page", "");
+      if (password == "1234") {
+        // Correct password entered, so display content and set session storage item
+        document.getElementById('protectedContent').style.display = 'block';
+        sessionStorage.setItem("authenticated", "true");
+      } else {
+        // Incorrect password entered, so display alert
+        alert("Incorrect password. Please try again.")
+      }
+    }
+  }
+</script>
+</head>
+<body onload="checkPassword()">
+<div id="protectedContent" style="display:none">
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1 class="display-4 text-primary">LoveGrow</h1>
+    <p class="lead">Welcome, 12345678M!</p>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="btn-group-vertical">
+        <a href="strengths.html" class="btn btn-primary btn-lg btn-block">Strengths</a>
+        <a href="improvement.html" class="btn btn-primary btn-lg btn-block">Areas for Improvement</a>
+        <a href="needs.html" class="btn btn-primary btn-lg btn-block">Unseen Needs of 12345678F</a>
+        <a href="comparison.html" class="btn btn-primary btn-lg btn-block">Comparison with Other Couples</a>
+        <a href="actions.html" class="btn btn-primary btn-lg btn-block">Action Recommendations</a>
+        <a href="alignment.html" class="btn btn-primary btn-lg btn-block">Couple's Alignment</a>
+        <a href="question.html" class="btn btn-primary btn-lg btn-block">Question to Ask</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
