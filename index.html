@@ -2,22 +2,33 @@
 <html>
 <head>
 <title>LoveGrow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+  .jumbotron h1.display-4 {
+    font-size: 32px;
+  }
+
+  .jumbotron p.lead {
+    font-size: 24px;
+  }
+
+  .btn {
+    font-size: 20px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+  }
+</style>
 <script type="text/javascript">
   function checkPassword() {
-    // Check if password has already been entered during this session
     if (sessionStorage.getItem("authenticated") === "true") {
-      // User has already entered correct password during this session, so display content
       document.getElementById('protectedContent').style.display = 'block';
     } else {
-      // User has not entered correct password during this session, so prompt for password
       var password = prompt("Please enter password to view this page", "");
       if (password == "1234") {
-        // Correct password entered, so display content and set session storage item
         document.getElementById('protectedContent').style.display = 'block';
         sessionStorage.setItem("authenticated", "true");
       } else {
-        // Incorrect password entered, so display alert
         alert("Incorrect password. Please try again.")
       }
     }
@@ -32,7 +43,7 @@
     <p class="lead">Welcome, 12345678M!</p>
   </div>
   <div class="row">
-    <div class="col-md-6 mx-auto">
+    <div class="col-12">
       <div class="btn-group-vertical">
         <a href="1.html" class="btn btn-primary btn-lg btn-block">Strengths</a>
         <a href="2.html" class="btn btn-primary btn-lg btn-block">Areas for Improvement</a>
